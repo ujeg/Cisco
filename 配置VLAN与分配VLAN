@@ -1,0 +1,16 @@
+进入交换机Switch 1进行vlan配置，命令如下：
+enable //进入特权模式
+configure terminal //进入全局配置模式
+vlan 2 //创建vlan 2
+vlan 3 //创建vlan 3
+interface fastEthernet 0/1 //进入端口 Fa 0/1
+no shutdown //开启端口
+switchport mode access //配置端口为access端口
+switchport access vlan 2 //将端口添加到vlan 2中
+interface fastEthernet 0/2 //进入端口 Fa 0/2
+no shutdown //开启端口
+switchport mode access //配置端口为access端口
+switchport access vlan 3 //将端口添加到vlan 3中
+interface fastEthernet 0/3 //进入端口 Fa 0/3
+no shutdown //开启端口
+switchport mode trunk //配置端口为trunk端口
