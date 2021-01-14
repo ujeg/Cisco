@@ -1,0 +1,15 @@
+设置enable密码
+
+修改hostname  XXX
+设置域名 ip domain name XXX
+创建RSA加密密钥（根据hostname+域名）crypto key generate rsa generate-key moduls 1024
+创建账号和密码 username  XXX previledge  3  secret  XXX
+
+进入线路配置
+line vty 0 4
+login local
+transport input ssh
+logging syn
+exec-time 0 0
+
+username root secret root 设置用户名密码
