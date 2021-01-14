@@ -1,0 +1,14 @@
+Router(config)#int f0/0 #进去所需的接口
+ip address 192.168.1.254 255.255.255.0 配置ip
+Router(config)#service dhcp	#进去DHCP服务器
+Router(config)#ip dhcp pool p1		#进去dhcp模式 并取名
+Router(dhcp-config)#default-router 192.168.1.254	#配置DHCP网关
+Router(dhcp-config)#dns-server 114.114.114.114	#配置dns服务器
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0	#配置dhcp分配的网段
+Router(config)#ip dhcp excluded-address 192.168.1.1 192.168.1.10  #保留地址1-10
+
+
+
+如果需要中继代理DHCP
+进去到接口
+Router(config-if)#ip helper-address ＋ 服务器ip地址
