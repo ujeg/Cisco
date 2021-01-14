@@ -1,0 +1,26 @@
+配置单臂路由
+
+pc ip配置
+交换机创建所需要的vlan
+
+交换机 
+interesting 进去接口
+sw m a
+sw a vlan x
+spa po
+
+有多少个接口就进去多少个
+
+进去连接路由器的接口
+配置sw mo tr
+sw tr all vlan X
+
+
+do sh interesting tr #查看tr接口
+
+配置SVI接口
+
+路由器
+int f0/1.X
+en dot1Q vlan的数字
+配置网关 加255.255.255.0
